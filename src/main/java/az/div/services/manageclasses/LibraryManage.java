@@ -30,10 +30,6 @@ LibraryServiceInter libraryService = new LibraryService();
                     libraryService.deleteLibraryById(inputLong("Enter id(for delete): "));
                     break;
                 case 6:
-//                    Long libraryId = inputRequiredLong("Insert library id");
-//                    Long bookId = inputRequiredLong("Insert book id");
-//                    int numberOfCopies = inputRequiredInt("Insert number of copies of book: ");
-                    //libraryService.addBookToLibrary(libraryId, bookId, numberOfCopies);
                     break;
                 case 0:
                     System.exit(0);
