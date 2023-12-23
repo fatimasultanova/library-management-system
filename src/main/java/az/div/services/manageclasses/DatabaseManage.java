@@ -3,6 +3,7 @@ package az.div.services.manageclasses;
 import static az.div.utils.MenuUtil.*;
 
 public class DatabaseManage {
+
     AuthorManage authorManage = new AuthorManage();
     BookManage bookManage = new BookManage();
     LibraryManage libraryManage = new LibraryManage();
@@ -29,4 +30,5 @@ public class DatabaseManage {
                 e.printStackTrace();
             }
         }
+
     }}
