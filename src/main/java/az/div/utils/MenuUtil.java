@@ -29,6 +29,7 @@ public class MenuUtil {
                 "[4].Update book\n" +
                 "[5].Delete book\n" +
                 "[6].Search books by title\n" +
+                "[7].Get authors of book by id\n" +
                 "[0].Exit program\n");
         return inputInt("Enter option: ");
     }

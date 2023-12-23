@@ -33,6 +33,9 @@ public class BookManage {
                     case 6:
                         System.out.println(bookService.searchBooksByTitle(inputString("Enter title: ")));
                         break;
+                    case 7:
+                        System.out.println(bookService.getAuthorsOfBook(inputLong("Enter book id(for get authors): ")));
+                        break;
                     case 0:
                         System.exit(0);
                     default:

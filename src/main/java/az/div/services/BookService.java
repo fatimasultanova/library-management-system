@@ -38,11 +38,9 @@ public class BookService implements BookServiceInter {
     }
 
 
-    // I must change
     @Override
     public Book updateBook(long id, Book book) {
         entityManage.getEntityTransaction().begin();
-
         try {
             Book book2 = entityManage.getEntityManager().find(Book.class, id);
             book2.setTitle(book.getTitle());
@@ -51,6 +49,8 @@ public class BookService implements BookServiceInter {
             book2.setDescription(book.getDescription());
             book2.setLanguage(book.getLanguage());
             book2.setAvailable_copies(book.getAvailable_copies());
+            book2.setLibrary(book.getLibrary());
+            book2.setAuthor(book.getAuthor());
             entityManage.getEntityTransaction().commit();
             return book2;
         }catch (Exception ex){

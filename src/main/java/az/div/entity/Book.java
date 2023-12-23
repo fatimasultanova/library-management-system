@@ -33,7 +33,8 @@ public class Book {
             ))
     private List<Author> author;
 
-    public Book(String title, String ISBN, String publication_year, String description, String language, int available_copies,Library library) {
+    public Book(String title, String ISBN, String publication_year, String description, String language, int available_copies,Library library ,List<Author> author) {
+        this.author = author;
         this.library = library;
         this.title = title;
         this.ISBN = ISBN;

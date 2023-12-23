@@ -6,6 +6,7 @@ import az.div.entity.Library;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,8 +46,23 @@ public class FillDetails {
         long id = scanner.nextLong();
         TypedQuery<Library> libraryTypedQuery = EntityManage.getInstance().getEntityManager().createQuery("select l from Library l where l.id=:id", Library.class);
         libraryTypedQuery.setParameter("id",id);
-        Book book = new Book(title,isbn,publication,description,language,available_copies,libraryTypedQuery.getSingleResult());
+        System.out.println("Enter author count: ");
+        int n = scanner.nextInt();
+        List<Author> authorList = getList(n);
+        Book book = new Book(title,isbn,publication,description,language,available_copies,libraryTypedQuery.getSingleResult(),authorList);
         return book;
+    }
+
+    private static List<Author> getList(int n) {
+        List<Author> authorList = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Author id: ");
+            long id = scanner.nextLong();
+            TypedQuery<Author> authorTypedQuery = EntityManage.getInstance().getEntityManager().createQuery("select a from Author a where a.id=:id", Author.class);
+            authorTypedQuery.setParameter("id", id);
+            authorList.add(authorTypedQuery.getSingleResult());
+        }
+        return authorList;
     }
 
 

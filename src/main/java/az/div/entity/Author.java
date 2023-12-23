@@ -1,9 +1,7 @@
 package az.div.entity;
 
-import com.sun.source.doctree.SeeTree;
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity(name = "Author")
@@ -22,7 +20,7 @@ public class Author {
     private String death_date;
     @Column(nullable = false,updatable = true)
     private String nationality;
-    @ManyToMany(mappedBy = "author")
+    @ManyToMany(mappedBy = "author", cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     private List<Book> books;
 
     public Author(String name, String surname, String birth_date, String death_date, String nationality) {
