@@ -17,7 +17,7 @@ public class MenuUtil {
                 "[3].Get all authors\n" +
                 "[4].Update author\n" +
                 "[5].Delete author\n" +
-                "[6].Get all books by author" +
+                "[6].Get all books by author\n" +
                 "[0].Exit program\n");
         return inputInt("Enter option: ");
     }
@@ -38,7 +38,6 @@ public class MenuUtil {
                 "[3].Get all libraries\n" +
                 "[4].Update library\n" +
                 "[5].Delete library\n" +
-                "[6].Add book to library" +
                 "[0].Exit program\n");
         return inputInt("Enter option: ");
     }

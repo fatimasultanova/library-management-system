@@ -16,22 +16,22 @@ public class BookManage {
                 int option = bookMenu();
                 switch (option) {
                     case 1:
-                        bookService.createBook(createBook());
+                        System.out.println(bookService.createBook(createBook()));
                         break;
                     case 2:
-                        bookService.getBookById(inputLong("Enter id(for get): "));
+                        System.out.println(bookService.getBookById(inputLong("Enter id(for get): ")));
                         break;
                     case 3:
-                        bookService.getAllBooks();
+                        System.out.println(bookService.getAllBooks());
                         break;
                     case 4:
-                        bookService.updateBook(inputLong("Enter id(for update): "),createBook());
+                        System.out.println(bookService.updateBook(inputLong("Enter id(for update): "),createBook()));
                         break;
                     case 5:
                         bookService.deleteBookById(inputLong("Enter id(for delete): "));
                         break;
                     case 6:
-                        bookService.searchBooksByTitle(inputString("Enter title: "));
+                        System.out.println(bookService.searchBooksByTitle(inputString("Enter title: ")));
                         break;
                     case 0:
                         System.exit(0);

@@ -15,21 +15,19 @@ LibraryServiceInter libraryService = new LibraryService();
             int option = libraryMenu();
             switch (option) {
                 case 1:
-                    libraryService.createLibrary(createLibrary());
+                    System.out.println(libraryService.createLibrary(createLibrary()));
                     break;
                 case 2:
-                    libraryService.getLibraryById(inputLong("Enter id(for get): "));
+                    System.out.println(libraryService.getLibraryById(inputLong("Enter id(for get): ")));
                     break;
                 case 3:
-                    libraryService.getAllLibraries();
+                    System.out.println(libraryService.getAllLibraries());
                     break;
                 case 4:
-                    libraryService.updateLibrary(inputLong("Enter id(for update): "), createLibrary());
+                    System.out.println(libraryService.updateLibrary(inputLong("Enter id(for update): "), createLibrary()));
                     break;
                 case 5:
                     libraryService.deleteLibraryById(inputLong("Enter id(for delete): "));
-                    break;
-                case 6:
                     break;
                 case 0:
                     System.exit(0);

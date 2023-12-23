@@ -11,5 +11,4 @@ public interface LibraryServiceInter {
     List<Library> getAllLibraries();
     Library updateLibrary(long id,Library library);
     void deleteLibraryById(long id);
-    void addBookToLibrary(long libraryId, long bookId, int numberOfCopies);
 }

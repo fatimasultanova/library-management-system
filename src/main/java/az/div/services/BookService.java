@@ -1,5 +1,6 @@
 package az.div.services;
 
+import az.div.entity.Author;
 import az.div.entity.Book;
 import az.div.manage.EntityManage;
 import az.div.services.inter.BookServiceInter;
@@ -72,11 +73,16 @@ public class BookService implements BookServiceInter {
         }
 
     }
-
     @Override
     public List<Book> searchBooksByTitle(String title) {
         TypedQuery<Book> bookQ = entityManage.getEntityManager().createQuery("select b from Book b where b.title = :title", Book.class);
         bookQ.setParameter("title",title);
         return bookQ.getResultList();
+    }
+    @Override
+    public List<Author> getAuthorsOfBook(long id){
+        TypedQuery<Author> authorQ = entityManage.getEntityManager().createQuery("select a from Author a join a.books b where b.id = :id", Author.class );
+        authorQ.setParameter("id" , id);
+        return authorQ.getResultList();
     }
 }

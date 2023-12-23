@@ -3,12 +3,16 @@ package az.div.manage;
 import az.div.entity.Author;
 import az.div.entity.Book;
 import az.div.entity.Library;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class FillDetails {
     public static Scanner scanner =  new Scanner(System.in);
+
+
     public static Author createAuthor (){
         System.out.println("Name: ");
         String name =scanner.nextLine();
@@ -37,7 +41,11 @@ public class FillDetails {
         String language = scanner.nextLine();
         System.out.println("Available copies: ");
         int available_copies = scanner.nextInt();
-        Book book = new Book(title,isbn,publication,description,language,available_copies);
+        System.out.println("Library id: ");
+        long id = scanner.nextLong();
+        TypedQuery<Library> libraryTypedQuery = EntityManage.getInstance().getEntityManager().createQuery("select l from Library l where l.id=:id", Library.class);
+        libraryTypedQuery.setParameter("id",id);
+        Book book = new Book(title,isbn,publication,description,language,available_copies,libraryTypedQuery.getSingleResult());
         return book;
     }
 

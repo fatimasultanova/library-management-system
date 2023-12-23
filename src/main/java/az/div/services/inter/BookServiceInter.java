@@ -12,4 +12,5 @@ public interface BookServiceInter {
     Book updateBook(long id,Book book);
     void deleteBookById(long id);
     List<Book> searchBooksByTitle(String title);
+    List<Author> getAuthorsOfBook(long id);
 }

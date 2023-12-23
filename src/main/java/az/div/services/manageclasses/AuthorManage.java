@@ -16,22 +16,22 @@ public class AuthorManage {
                 int option = authorMenu();
                 switch (option) {
                     case 1:
-                        authorService.createAuthor(createAuthor());
+                        System.out.println(authorService.createAuthor(createAuthor()));
                         break;
                     case 2:
-                        authorService.getAuthorById(inputLong("Enter id(for get): "));
+                        System.out.println(authorService.getAuthorById(inputLong("Enter id(for get): ")));
                         break;
                     case 3:
-                        authorService.getAllAuthors();
+                        System.out.println(authorService.getAllAuthors());
                         break;
                     case 4:
-                        authorService.updateAuthor(inputLong("Enter id(for update): "), createAuthor());
+                        System.out.println(authorService.updateAuthor(inputLong("Enter id(for update): "), createAuthor()));
                         break;
                     case 5:
                         authorService.deleteAuthorById(inputLong("Enter id(for delete): "));
                         break;
                     case 6:
-                        authorService.getAllBooksByAuthor(inputLong("Enter author id(for all books): "));
+                        System.out.println(authorService.getAllBooksByAuthor(inputLong("Enter author id(for all books): ")));
                         break;
                     case 0:
                         System.exit(0);

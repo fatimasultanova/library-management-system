@@ -66,9 +66,4 @@ public class LibraryService implements LibraryServiceInter {
         }
 
     }
-
-    @Override
-    public void addBookToLibrary(long libraryId, long bookId, int numberOfCopies) {
-
-    }
 }

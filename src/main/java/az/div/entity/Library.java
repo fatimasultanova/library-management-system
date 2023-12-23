@@ -16,7 +16,7 @@ public class Library {
     private String address;
     @Column(nullable = false,unique = true)
     private String contact;
-    @OneToMany(mappedBy = "library")
+    @OneToMany(mappedBy = "library", cascade = {CascadeType.REMOVE,CascadeType.MERGE})
     private List<Book> books;
 
     public List<Book> getBooks() {
@@ -26,7 +26,6 @@ public class Library {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
-
     @Override
     public String toString() {
         return "Library{" +
@@ -34,6 +33,7 @@ public class Library {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", contact='" + contact + '\'' +
+                ", books=" + books +
                 '}';
     }
 

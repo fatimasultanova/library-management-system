@@ -19,7 +19,7 @@ public class Book {
     private String description;
     private String language;
     private int available_copies;
-    @ManyToOne(cascade = {CascadeType.REMOVE,CascadeType.MERGE})
+    @ManyToOne()
     @JoinColumn(name = "library_id")
     private Library library;
     @ManyToMany
@@ -33,7 +33,8 @@ public class Book {
             ))
     private List<Author> author;
 
-    public Book(String title, String ISBN, String publication_year, String description, String language, int available_copies) {
+    public Book(String title, String ISBN, String publication_year, String description, String language, int available_copies,Library library) {
+        this.library = library;
         this.title = title;
         this.ISBN = ISBN;
         this.publication_year = publication_year;
@@ -52,6 +53,7 @@ public class Book {
                 ", description='" + description + '\'' +
                 ", language='" + language + '\'' +
                 ", available_copies=" + available_copies +
+                ", author=" + author +
                 '}';
     }
 
